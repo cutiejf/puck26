@@ -710,32 +710,82 @@ th {
 
 /* Mobile - Single Page View */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        perspective: none;
+    }
+    
     .book {
-        width: 90vw;
-        height: calc(90vw * 1.2);
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+        margin: 0;
         translate: 0 0 !important;
+        transform: none !important;
     }
     
     .page {
         width: 100%;
+        height: auto;
+        min-height: 100vh;
+        transform: none !important;
+        rotate: none !important;
+        box-shadow: none;
     }
     
-    /* Hide back panel on mobile to show only one page at a time */
-    .panel.back {
-        display: none;
+    /* Hide ALL back pages on mobile */
+    .back {
+        display: none !important;
     }
     
-    /* Make front panel full width */
-    .panel.front {
-        width: 100%;
+    /* Make front pages full width and visible */
+    .front {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100vh;
+        translate: 0 !important;
+        border-radius: 0 !important;
+        border: none !important;
+        background: #fff !important;
+        padding: 15px !important;
+        overflow-y: auto !important;
     }
     
+    /* Cover page adjustments */
+    .front.cover {
+        padding: 0 !important;
+    }
+    
+    .front-overlay {
+        height: 100vh;
+        padding: 20px !important;
+    }
+    
+    /* Tables responsive */
+    table {
+        font-size: 11px !important;
+        width: 100% !important;
+    }
+    
+    th, td {
+        padding: 4px 2px !important;
+    }
+    
+    /* Controls */
     .controls {
-        padding: 8px 15px;
+        padding: 8px 12px;
+        bottom: 10px;
     }
     
     .btn {
-        padding: 8px 15px;
-        font-size: 11px;
+        padding: 6px 12px;
+        font-size: 10px;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
     }
 }
